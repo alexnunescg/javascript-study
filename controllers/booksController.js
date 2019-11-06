@@ -26,6 +26,7 @@ function booksController(Book) {
       const returnBooks = books.map((book) => {
         const newBook = book.toJSON();
         newBook.links = {};
+        // eslint-disable-next-line no-underscore-dangle
         newBook.links.self = `http://${req.headers.host}/api/books/${book._id}`;
         return newBook;
       });

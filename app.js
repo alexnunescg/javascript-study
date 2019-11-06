@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -9,9 +10,11 @@ const app = express();
 
 if (process.env.ENV === 'Test') {
   console.log('This is a Test');
+  // eslint-disable-next-line no-unused-vars
   const db = mongoose.connect('mongodb://localhost/bookAPI_Test');
 } else {
   console.log('This is for real');
+  // eslint-disable-next-line no-unused-vars
   const db = mongoose.connect('mongodb://localhost/bookAPI');
 }
 
